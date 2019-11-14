@@ -54,7 +54,9 @@ const args = process.argv.slice(2);
     ));
   });
 
-  console.log(JSON.stringify({main, another}));
+  console.log(JSON.stringify({
+    entries: [main, ...another]
+  }));
 
   await browser.close();
 })();
