@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  await page.goto(args[0]); // TODO
+  // await page.goto(args[0], {waitUntil: 'domcontentloaded'}); // TODO
   await page.setContent(input);
 
   const main = await page.evaluate(() => {
