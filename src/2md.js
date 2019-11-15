@@ -9,7 +9,7 @@ fs.readFile(args[0], (err, data) => {
 
   const result = json.entries.map((row) => (
     [
-      `- [${row.title.text}](${row.title.link}) \`${row.category.text}\``,
+      `- [${row.title.text}](${row.title.link}) \`${row.category.text}\` \`${row.users.count} USERS\``,
       `  - ${row.tags.map((tag) => (tag.text))}`
     ].join("\n")
   ));

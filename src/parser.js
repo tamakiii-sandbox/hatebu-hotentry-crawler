@@ -14,8 +14,11 @@ const args = process.argv.slice(2);
     const section = document.querySelector("#container > div.wrapper > div > div.entrylist-main > section > div > ul > li > div > div.entrylist-contents-main")
 
     return {
+      users: {
+        count : parseInt(section.querySelector('span.entrylist-contents-users a span').innerText),
+      },
       title: {
-        text: section.querySelector('h3.entrylist-contents-title').innerText,
+        text: section.querySelector('h3.entrylist-contents-title a').title,
         link: section.querySelector('h3.entrylist-contents-title a').href,
       },
       category: {
@@ -36,8 +39,11 @@ const args = process.argv.slice(2);
 
     return Array.from(contents).map((section) => (
       {
+        users: {
+          count : parseInt(section.querySelector('span.entrylist-contents-users a span').innerText),
+        },
         title: {
-          text: section.querySelector('h3.entrylist-contents-title').innerText,
+          text: section.querySelector('h3.entrylist-contents-title a').title,
           link: section.querySelector('h3.entrylist-contents-title a').href,
         },
         category: {
