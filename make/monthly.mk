@@ -60,9 +60,9 @@ DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 	done
 
 @markdown/at/%:
-	make -f make/markdown.mk dist/hotentry/all/$(@F).mk
-	make -f make/markdown.mk dist/hotentry/economics/$(@F).mk
-	make -f make/markdown.mk dist/hotentry/social/$(@F).mk
+	make -f make/markdown.mk dist/hotentry/all/$(@F).md
+	make -f make/markdown.mk dist/hotentry/economics/$(@F).md
+	make -f make/markdown.mk dist/hotentry/social/$(@F).md
 
 list:
 	@echo $(call MONTH_TO_DATE_PERIOD,20190101)
