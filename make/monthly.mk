@@ -48,15 +48,21 @@ DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 @html/between/%:
 	for date in $(shell ./date_between.sh $(word 1,$(subst -, ,$(@F))) $(word 2,$(subst -, ,$(@F)))); do \
 		make -f make/html.mk dist/hotentry/all/$$date.html; \
+		make -f make/html.mk dist/hotentry/economics/$$date.html; \
+		make -f make/html.mk dist/hotentry/social/$$date.html; \
 	done
 
 @json/between/%:
 	for date in $(shell ./date_between.sh $(word 1,$(subst -, ,$(@F))) $(word 2,$(subst -, ,$(@F)))); do \
 		make -f make/json.mk dist/hotentry/all/$$date.json; \
+		make -f make/json.mk dist/hotentry/economics/$$date.json; \
+		make -f make/json.mk dist/hotentry/social/$$date.json; \
 	done
 
 @markdown/at/%:
 	make -f make/markdown.mk dist/hotentry/all/$(@F).mk
+	make -f make/markdown.mk dist/hotentry/economics/$(@F).mk
+	make -f make/markdown.mk dist/hotentry/social/$(@F).mk
 
 list:
 	@echo $(call MONTH_TO_DATE_PERIOD,20190101)
