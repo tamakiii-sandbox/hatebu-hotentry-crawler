@@ -13,9 +13,9 @@ DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 	@html/between/20190701-20190731 \
 	@html/between/20190801-20190831 \
 	@html/between/20190901-20190930 \
-	@html/between/20191001-20191031 \
-	@html/between/20191101-20191130 \
-	@html/between/20191201-20191231
+	@html/between/20191001-20191031
+	# @html/between/20191101-20191130 \
+	# @html/between/20191201-20191231
 
 @json/all: \
 	@json/between/20190101-20190131 \
@@ -27,9 +27,9 @@ DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 	@json/between/20190701-20190731 \
 	@json/between/20190801-20190831 \
 	@json/between/20190901-20190930 \
-	@json/between/20191001-20191031 \
-	@json/between/20191101-20191130 \
-	@json/between/20191201-20191231
+	@json/between/20191001-20191031
+	# @json/between/20191101-20191130 \
+	# @json/between/20191201-20191231
 
 @markdown/all: \
 	@markdown/at/201901 \
@@ -41,9 +41,9 @@ DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 	@markdown/at/201907 \
 	@markdown/at/201908 \
 	@markdown/at/201909 \
-	@markdown/at/201910 \
-	@markdown/at/201911 \
-	@markdown/at/201912
+	@markdown/at/201910
+	# @markdown/at/201911 \
+	# @markdown/at/201912
 
 @html/between/%:
 	for date in $(shell ./date_between.sh $(word 1,$(subst -, ,$(@F))) $(word 2,$(subst -, ,$(@F)))); do \
